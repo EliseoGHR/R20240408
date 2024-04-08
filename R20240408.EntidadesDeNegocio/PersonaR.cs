@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace R20240408.EntidadesDeNegocio
 {
@@ -21,7 +22,7 @@ namespace R20240408.EntidadesDeNegocio
         [Display(Name = "Fecha de Nacimiento")]
         public DateTime FechaNacimientoR { get; set; }
 
-        [Required(ErrorMessage = "Fecha de Nacimiento es requerido")]
+        [Required(ErrorMessage = "Sueldo es requerido")]
         [Display(Name = "Sueldo")]
         public decimal SueldoR { get; set; }
 
@@ -32,6 +33,9 @@ namespace R20240408.EntidadesDeNegocio
         [StringLength(200, MinimumLength = 2, ErrorMessage = "EL Comentario debe tener entre 2 y 200 caracteres")]
         [Display(Name = "Comentario")]
         public string? ComentarioR { get; set; }
+
+        [NotMapped]
+        public int Take { get; set; }
 
     }
 }
